@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day Ann🌹</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #ffdde1, #ee9ca7);
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px;
+      border-radius: 25px;
+      text-align: center;
+      max-width: 520px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      color: #c9184a;
+      font-size: 2.6em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.15em;
+      line-height: 1.7;
+    }
+
+    .rose {
+      font-size: 70px;
+      margin: 20px 0;
+      animation: bloom 2s infinite;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #c9184a, #ff4d6d);
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 20px rgba(201, 24, 74, 0.4);
+    }
+
+    @keyframes bloom {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Falling petals */
+    .petal {
+      position: absolute;
+      top: -50px;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Happy Rose Day 🌹</h1>
+
+    <p>
+      If love had a color,<br>
+      it would be the red of a rose.<br>
+      And if love had a name…<br>
+      it would be *you*.
+    </p>
+
+    <div class="rose">🌹</div>
+
+    <p>
+      This rose is not just a flower,<br>
+      it’s my feelings — soft, honest,<br>
+      and meant only for you.
+    </p>
+
+    <button onclick="alert('This rose is yours… today and always 🌹❤️')">
+      Accept My Rose
+    </button>
+  </div>
+
+  <script>
+    // Create falling rose petals
+    for (let i = 0; i < 25; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.innerHTML = '🌸';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      petal.style.fontSize = (Math.random() * 15 + 15) + 'px';
+      document.body.appendChild(petal);
+    }
+  </script>
+
+</body>
+</html>
